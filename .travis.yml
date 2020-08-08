@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t madhav/docker-react -f Dockerbuild.dev .
+
+script:
+   - docker run madhav/docker-react npm run test -- --coverage   
